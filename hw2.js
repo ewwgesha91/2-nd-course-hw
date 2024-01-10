@@ -52,13 +52,13 @@ const user = {
 }
 
 // Задание 9.1
-user.cityOfResidence = true;
+user["city of residence"] = 'Москва';
 
 // Задание 9.2
 user.age = 35;
 
 // Задание 9.3
-delete user.cityOfResidence;
+delete user["city of residence"];
 
 // Задание 9.4
 let info = prompt('Какую информацию хотите узнать о пользователе?');
