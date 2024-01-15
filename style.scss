@@ -63,6 +63,7 @@ body {
         background: linear-gradient(180deg, rgba(39, 1, 15, 0.00) 0%, #001944 100%), url(<path-to-image>), lightgray 50% / cover no-repeat;
         position: relative;
         &:hover {
+            outline: 3px solid #44D2FF;
             cursor: url(img/cursor.svg), pointer;
         }
     }

@@ -65,6 +65,7 @@ body {
   position: relative;
 }
 .play__box:hover {
+  outline: 3px solid #44D2FF;
   cursor: url(img/cursor.svg), pointer;
 }
 
