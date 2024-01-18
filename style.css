@@ -176,4 +176,28 @@ body {
     width: 343px;
     height: 300px;
   }
+  .game__one {
+    padding-top: 51px;
+    padding-bottom: 85px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  .game__one_title {
+    text-align: center;
+    font-size: 32px;
+  }
+  .game__one_text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .game__one_info {
+    align-items: center;
+  }
+  .game__one_img {
+    width: 344px;
+    height: 236px;
+    flex-shrink: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
