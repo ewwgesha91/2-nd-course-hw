@@ -182,6 +182,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 64px;
+    align-items: center;
   }
   .game__one_title {
     text-align: center;
