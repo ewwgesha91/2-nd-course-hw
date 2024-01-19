@@ -93,7 +93,7 @@ const circle2 = {
     getArea: getCircleArea,
     getPerimeter: getCirclePerimeter,
 };
-console.log(circle1.getArea);
-console.log(circle1.getPerimeter);
-console.log(circle2.getArea);
-console.log(circle2.getPerimeter);
+console.log(circle1.getArea());
+console.log(circle1.getPerimeter());
+console.log(circle2.getArea());
+console.log(circle2.getPerimeter());
