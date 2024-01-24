@@ -95,7 +95,7 @@ body {
   padding-bottom: 232px;
   display: flex;
   gap: 135px;
-  background-image: url(img/game__one_background.jpg);
+  background-image: url(img/game_one_background.jpg);
 }
 .game__one_info {
   display: flex;
