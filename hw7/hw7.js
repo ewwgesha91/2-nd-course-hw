@@ -27,12 +27,20 @@ function getRandomInt() {
 console.log(getRandomInt());
 
 // Задание 6
+function getRandomArrNumbers(n) {
+    let result = [];
+    for (let i = 0; i < n/2; i++) {
+        result.push(Math.floor(Math.random() * n));
+    }
+    return result;
+}
+console.log(getRandomArrNumbers(7));
+console.log(getRandomArrNumbers(12));
 
 // Задание 7
-    let a = Number(prompt('Введите первое число'));
-    let b = Number(prompt('Введите второе число'));
+let a = Number(prompt('Введите первое число'));
+let b = Number(prompt('Введите второе число'));
 function getRandomNum() {
-
     if (isNaN(a) > isNaN(b)) {
         return Math.round(Math.random() * (a - b) + b);
     } else {
@@ -41,19 +49,20 @@ function getRandomNum() {
 }
 console.log(getRandomNum());
 
-//Задание 11
-function gameWords() {
-    let words = ['Яблоко', 'Груша', 'Дыня', 'Виноград', 'Персик', 'Апельсин', 'Мандарин'];
-    words = words.sort(() => Math.random() - 0.5);
-    alert(words);
-    let first = prompt('Чему равнялся первый элемент массива?');
-    let last = prompt('Чему равнялся последний элемент массива?');
-    if (first.toLowerCase() === words[0].toLowerCase() && last.toLowerCase() === words[words.length - 1].toLowerCase()) {
-         alert('Поздравляю, Вы угадали!');
-    } else if (first.toLowerCase() === words.indexOf[0].toLowerCase() || last.toLowerCase() === words[words.length - 1].toLowerCase()) {
-         alert('Вы были близки к победе!');
-    } else {
-         alert('Вы ответили неверно.');
-    }
+// Задание 8
+let date = new Date();
+console.log(date);
+
+// Задание 9
+let currentDate = new Date();
+currentDate.setDate(currentDate.getDate() + 73);
+console.log(currentDate);
+
+// Задание 10
+function getDate() {
+    const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+    const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+    let myDate = new Date();
+    return `Дата: ${myDate.getDate()} ${months[myDate.getMonth()]} ${myDate.getFullYear()} - это ${days[myDate.getDay()]}. Время: ${myDate.getHours()}:${myDate.getMinutes()}:${myDate.getSeconds()}`;
 }
-gameWords();
+console.log(getDate());

@@ -76,11 +76,13 @@
             font-size: 14px;
             line-height: 22px;
         }
+        &_info {
+            align-items: center;
+        }
         &_img {
             width: 344px;
             height: 231px;
             flex-shrink: 0;
-        }
-        
+        } 
     }
 }

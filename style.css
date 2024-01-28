@@ -257,6 +257,9 @@ body {
     font-size: 14px;
     line-height: 22px;
   }
+  .game__two_info {
+    align-items: center;
+  }
   .game__two_img {
     width: 344px;
     height: 231px;
