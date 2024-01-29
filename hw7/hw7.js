@@ -4,7 +4,7 @@ console.log(str.toUpperCase());
 
 // Задание 2
 function searchStart(arr, str) {
-    const result = arr.filter(el => el.toLowerCase().includes(str.toLowerCase()));
+    const result = arr.filter(el => el.toLowerCase().startsWith(str.toLowerCase()));
     return result;
 }
 console.log(searchStart(['Кошка', 'Кит', 'Комар', 'Носорог'], 'ко'));
@@ -29,7 +29,7 @@ console.log(getRandomInt());
 // Задание 6
 function getRandomArrNumbers(n) {
     let result = [];
-    for (let i = 0; i < n/2; i++) {
+    for (let i = 0; i < Math.floor(n/2); i++) {
         result.push(Math.floor(Math.random() * n));
     }
     return result;
@@ -38,16 +38,17 @@ console.log(getRandomArrNumbers(7));
 console.log(getRandomArrNumbers(12));
 
 // Задание 7
-let a = Number(prompt('Введите первое число'));
-let b = Number(prompt('Введите второе число'));
-function getRandomNum() {
-    if (isNaN(a) > isNaN(b)) {
-        return Math.round(Math.random() * (a - b) + b);
-    } else {
-        return Math.round(Math.random() * (b - a) + a);
-    }
+// let a = Number(prompt('Введите первое число'));
+// let b = Number(prompt('Введите второе число'));
+function getRandomNum(minValue, maxValue) {
+    return Math.round(Math.random() * (maxValue - minValue)) + minValue;
+    // if (isNaN(a) > isNaN(b)) {
+    //     return Math.round(Math.random() * (a - b) + b);
+    // } else {
+    //     return Math.round(Math.random() * (b - a) + a);
+    // }
 }
-console.log(getRandomNum());
+console.log(getRandomNum(5, 20));
 
 // Задание 8
 let date = new Date();
@@ -63,6 +64,18 @@ function getDate() {
     const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
     const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
     let myDate = new Date();
-    return `Дата: ${myDate.getDate()} ${months[myDate.getMonth()]} ${myDate.getFullYear()} - это ${days[myDate.getDay()]}. Время: ${myDate.getHours()}:${myDate.getMinutes()}:${myDate.getSeconds()}`;
+    let hour = myDate.getHours(); 
+    let minute = myDate.getMinutes(); 
+    let second = myDate.getSeconds();
+    if (hour < 10) {
+        hour = "0" + hour; 
+    }
+    if (minute < 10) { 
+        minute = "0" + minute; 
+    }
+    if (second < 10) { 
+        second = "0" + second; 
+    }
+    return `Дата: ${myDate.getDate()} ${months[myDate.getMonth()]} ${myDate.getFullYear()} - это ${days[myDate.getDay()]}. Время: ${hour}:${minute}:${second}`;
 }
 console.log(getDate());
