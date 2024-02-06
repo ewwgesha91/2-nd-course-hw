@@ -5,16 +5,14 @@ const people = [
     { name: 'Олег', age: 7 },
     { name: 'Оксана', age: 47 }
 ];
- 
- // Допишите колбэк для sort, изучите, как работает колбэк, в документации
-console.log(people.sort());
- // код выше должен вывеcти =>
- // [
- //  { name: 'Олег', age: 7 },
- //  { name: 'Анна', age: 17 },
- //  { name: 'Глеб', age: 29 },
- //  { name: 'Оксана', age: 47 }
- // ]
+console.log(people.sort(function(a, b) {
+    if (a.age > b.age) {
+        return 1
+    } else if (b.age > a.age) {
+        return -1
+    }
+    return 0
+}));
 
  // Задание 2
 function isPositive() {
@@ -39,6 +37,14 @@ const men = [
 console.log(filter(men, isMale)); // Должен выводить [{name: 'Глеб', gender: 'male'},  {name: 'Олег', gender: 'male'}]
 
 // Задание 3
+function timer() {
+    let currentDate = new Date();
+    console.log(currentDate);
+    
+    let interval = setInterval(() => console.log(new Date()), 3000);
+    setTimeout(() => { clearInterval(interval); console.log('30 секунд прошло'); }, 1000 * 30);
+}
+timer();
 
 // Задание 4
 function delayForSecond(callback) {
