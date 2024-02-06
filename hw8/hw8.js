@@ -15,26 +15,34 @@ console.log(people.sort(function(a, b) {
 }));
 
  // Задание 2
-function isPositive() {
-    // писать код тут
+function isPositive(num) {
+    if (num > 0) {
+        return num
+    }
 }
-function isMale() {
-    // писать код тут
+function isMale(gen) {
+    if (gen.gender === 'male') {
+        return gen;
+    }
 }
-function filter() {
-    // писать код тут
-}
-    
-console.log(filter([3, -4, 1, 9], isPositive)); // Должен выводить [3, 1, 9]
+function filter(arr, ruleFunction) {
+    const output = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (ruleFunction(arr[i])) {
+            output.push(ruleFunction(arr[i]));
+        }
+    } 
+    return output;
+}   
+console.log(filter([3, -4, 1, 9], isPositive));
     
 const men = [
     {name: 'Глеб', gender: 'male'},
     {name: 'Анна', gender: 'female'},
     {name: 'Олег', gender: 'male'},
     {name: 'Оксана', gender: 'female'}
-];
-    
-console.log(filter(men, isMale)); // Должен выводить [{name: 'Глеб', gender: 'male'},  {name: 'Олег', gender: 'male'}]
+]; 
+console.log(filter(men, isMale));
 
 // Задание 3
 function timer() {
@@ -48,31 +56,22 @@ timer();
 
 // Задание 4
 function delayForSecond(callback) {
-    // Код писать можно только внутри этой функции
-  callback();
+    setTimeout( () => callback, 1000);
+    callback();
 }
-
 delayForSecond(function () {
   console.log('Привет, Глеб!');
 })
 
 // Задание 5
-// Функция delayForSecond через 1 секунду пишет в консоль «Прошла одна секунда», 
-// а затем вызывает переданный колбэк
 function delayForSecond(cb) {
     setTimeout(() => {
         console.log('Прошла одна секунда');
-				if(cb) { 	cb(); }
-
+		if(cb) { 	cb(); }
     }, 1000)
 }
 
-// Функция sayHi выводит в консоль приветствие для указанного имени
 function sayHi (name) {
     console.log(`Привет, ${name}!`);
 }
-
-// Код выше менять нельзя
-
-// Нужно изменить код ниже:
-delayForSecond(sayHi('Глеб'))
+delayForSecond(() => sayHi('Глеб'));
